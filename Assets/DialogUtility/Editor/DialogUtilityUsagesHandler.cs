@@ -7,7 +7,6 @@ using UnityEngine;
 namespace DialogUtilitySpruce.Editor
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "DialogUtility/Create DialogUtilityUsagesHandler object", fileName = "DialogUtilityUsagesHandler.asset")]
     public class DialogUtilityUsagesHandler : ScriptableObject
     {
         public const string DialogUtilityUsagesHandlerPath = "Assets/DialogUtility/DialogUtilityUsagesHandler.asset";

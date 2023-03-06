@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 namespace DialogUtilitySpruce.Editor
 {
-    [CreateAssetMenu(menuName = "DialogGraph/Create UXML Data object", fileName = "UXMLData.asset")]
+    [CreateAssetMenu(menuName = "DialogUtility/Create UXML Data object", fileName = "UXMLData.asset")]
     public class DialogGraphUXMLData : ScriptableObject
     {
         [NonSerialized] 

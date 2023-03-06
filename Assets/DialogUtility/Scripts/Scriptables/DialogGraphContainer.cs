@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace DialogUtilitySpruce
 {
-    [CreateAssetMenu(menuName = "DialogGraph/EventGraphContainer")]
     public class DialogGraphContainer : ScriptableObject
     {
         public SerializableGuid id = Guid.NewGuid();

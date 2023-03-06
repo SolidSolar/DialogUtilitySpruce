@@ -2,7 +2,7 @@
 
 namespace DialogUtilitySpruce.Examples
 {
-    [CreateAssetMenu(menuName = "DialogGraph/Examples/SomethingExistsCondition")]
+    [CreateAssetMenu(menuName = "DialogUtility/Examples/SomethingExistsCondition")]
     public class SomethingExistsCondition : Condition
     {
         public string[] objectName;
