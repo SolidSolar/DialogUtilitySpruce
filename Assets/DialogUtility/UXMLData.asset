@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc472b3d0e74974b8236872d21edb89, type: 3}
+  m_Name: UXMLData
+  m_EditorClassIdentifier: 
+  characterItem: {fileID: 9197481963319205126, guid: bfe54ad6215b02345a3fe76b0ed4997d, type: 3}
+  dialogGraphWindow: {fileID: 9197481963319205126, guid: 8d8856f9a0e819f4897333e4ac6b207d, type: 3}
+  characterList: {fileID: 9197481963319205126, guid: cad4d252cdb48fc469220720f4bbfa9f, type: 3}
+  dialogNode: {fileID: 9197481963319205126, guid: 680113f01669f9d489bbe95d96266337, type: 3}
+  dialogNodePortItem: {fileID: 9197481963319205126, guid: 229fe7895b9c5f542a7f6b183a66e93a, type: 3}
+  dialogNodeAddPortButton: {fileID: 9197481963319205126, guid: 1cdec43302728f949b82f229b3d7e227, type: 3}

@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/DialogUtility/uss/DialogGraphNodePort.uss?fileID=7433441132597879392&amp;guid=0a61c2ae89517db4b850c1c4f43bfbbd&amp;type=3#DialogGraphNodePort" />
+    <ui:VisualElement style="padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; width: 200px; height: 30px; flex-direction: row; justify-content: flex-start; max-width: 200px; min-width: 200px;">
+        <uie:ObjectField label="Condition" name="condition" type="DialogUtilitySpruce.Condition, Assembly-CSharp" class="port-text-field" style="font-size: 10px; -unity-text-align: middle-left; height: 20px; width: 180px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-right: 2px;" />
+        <ui:Button text="-" display-tooltip-when-elided="true" name="remove" style="height: 20px; width: 20px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

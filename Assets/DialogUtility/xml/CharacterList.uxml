@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="height: 100%; width: 100%;">
+        <ui:Label text="Global Characters List" display-tooltip-when-elided="true" />
+        <ui:ListView focusable="true" reorderable="false" name="globalList" horizontal-scrolling="false" item-height="34" style="height: 0; width: 100%; max-height: 100%; min-height: 20px;" />
+        <ui:Button text="Add new character" display-tooltip-when-elided="true" name="add" style="height: 40px;" />
+    </ui:VisualElement>
+</ui:UXML>

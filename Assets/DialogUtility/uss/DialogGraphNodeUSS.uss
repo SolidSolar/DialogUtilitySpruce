@@ -1,0 +1,26 @@
+.dialog-node-base{
+    width: 340px;
+    height: auto;
+}
+
+.text-default{
+    font-size: 16px;
+}
+
+.text-field {
+    width: 340px;
+    height: auto;
+    min-height: 300px;
+    margin-bottom: 3px;
+    -unity-text-align: upper-left;
+}
+
+.text-field > .unity-base-text-field__input--single-line {
+    -unity-text-align: upper-left;
+}
+
+.character-dropdown{
+    width: 100%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}

@@ -1,0 +1,20 @@
+.port-text-field > .unity-text-field__label {
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    align-self: flex-start;
+}
+
+.port-text-field > .unity-object-field__label {
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    align-self: flex-start;
+}
+
+.port-button {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    align-self: flex-start;
+}

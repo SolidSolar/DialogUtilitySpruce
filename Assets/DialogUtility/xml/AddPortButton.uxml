@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="/Assets/DialogGraph/uss/DialogGraphNodePort.uss" />
+    <ui:Button text="Add" display-tooltip-when-elided="true" name="add" class="port-text-field port-button" style="width: 264px; max-width: 264px; min-width: 264px;" />
+</ui:UXML>
