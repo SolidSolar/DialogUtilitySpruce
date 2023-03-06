@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Assets/DialogUtility/uss/DialogGraphNodeUSS.uss?fileID=7433441132597879392&amp;guid=5831a1c00474b92498266e063ffce9ea&amp;type=3#DialogGraphNodeUSS" />
-    <ui:VisualElement class="dialog-node-base" style="padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; max-width: none; min-width: auto; width: 344px; flex-shrink: 1; flex-basis: auto; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;">
+    <ui:VisualElement class="dialog-node-base" style="padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; max-width: none; min-width: auto; width: 344px; flex-shrink: 1; flex-basis: auto; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(55, 55, 55, 255);">
         <ui:VisualElement style="flex-direction: row;">
             <ui:Label text=" Dialog №{0}" display-tooltip-when-elided="true" name="title" style="width: 170px;" />
             <ui:RadioButton label="Is Start node" name="startNode" style="width: 170px;" />
