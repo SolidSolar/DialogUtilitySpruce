@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7981290869042417739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafe474ade11482d982a1640a184afe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id:
+      Value: b4377e1e-71bc-45eb-a384-98805c18c32e
+    characterId:
+      Value: 
+    text: 
+    sprite: {fileID: 0}
+    position: {x: 424.4135, y: 411.77536}
+    ports: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &-7321900024988439741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafe474ade11482d982a1640a184afe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id:
+      Value: b3e1f4e4-51f3-43ca-bab1-abe1cd9e2aab
+    characterId:
+      Value: 
+    text: 
+    sprite: {fileID: 0}
+    position: {x: 2, y: -3}
+    ports:
+    - rid: 7226681259148181543
+    - rid: 7226681259148181544
+    - rid: 7226681259148181545
+  references:
+    version: 2
+    RefIds:
+    - rid: 7226681259148181543
+      type: {class: PortConditionData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
+      data:
+        id:
+          Value: 2c6b38d4-7642-4992-9f8c-13c9fb1dc6c8
+        condition: {fileID: 0}
+    - rid: 7226681259148181544
+      type: {class: PortConditionData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
+      data:
+        id:
+          Value: 3c1a721e-8676-415b-ad29-5a47a507d044
+        condition: {fileID: 0}
+    - rid: 7226681259148181545
+      type: {class: PortConditionData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
+      data:
+        id:
+          Value: fefd0362-1277-4680-8801-9a367a61de79
+        condition: {fileID: 0}
+--- !u!114 &-6209697634155846261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafe474ade11482d982a1640a184afe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id:
+      Value: 5325e951-2dbb-400d-b959-a62f68d58c1b
+    characterId:
+      Value: 
+    text: 
+    sprite: {fileID: 0}
+    position: {x: 955.2942, y: 568.49994}
+    ports: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &-4371598109968156643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafe474ade11482d982a1640a184afe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id:
+      Value: 88048472-dca4-4184-944b-269183ce63f5
+    characterId:
+      Value: 
+    text: 
+    sprite: {fileID: 0}
+    position: {x: 1056.4557, y: 202.2788}
+    ports: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &-3201438505900333199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafe474ade11482d982a1640a184afe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id:
+      Value: 259a37b8-6a3d-4ebe-a359-1857534586cc
+    characterId:
+      Value: 
+    text: 
+    sprite: {fileID: 0}
+    position: {x: 483.00797, y: -60.988075}
+    ports:
+    - rid: 7226681259148181553
+  references:
+    version: 2
+    RefIds:
+    - rid: 7226681259148181553
+      type: {class: PortConditionData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
+      data:
+        id:
+          Value: de91f785-0c5c-4b2e-be6e-30f2d5066948
+        condition: {fileID: 0}
+--- !u!114 &-1196746693691705226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafe474ade11482d982a1640a184afe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id:
+      Value: 0426f6d9-4747-435e-bafc-28d58d2ce97d
+    characterId:
+      Value: 
+    text: 
+    sprite: {fileID: 0}
+    position: {x: 0, y: 0}
+    ports: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96af60eaeaa6420497e02b399bb92455, type: 3}
+  m_Name: some dialog
+  m_EditorClassIdentifier: 
+  id:
+    Value: 684150b6-2015-4301-ac87-ed99393c0989
+  startNodeId:
+    Value: b3e1f4e4-51f3-43ca-bab1-abe1cd9e2aab
+  nodeLinks:
+  - rid: 7226681259148181566
+  - rid: 7226681259148181567
+  dialogNodeDataList:
+  - {fileID: -7321900024988439741}
+  - {fileID: -3201438505900333199}
+  - {fileID: -7981290869042417739}
+  - {fileID: -4371598109968156643}
+  - {fileID: -1196746693691705226}
+  - {fileID: -6209697634155846261}
+  - {fileID: 1636755330018712395}
+  - {fileID: 1139420655787540440}
+  localisationResource: {fileID: 11400000, guid: ccaba7e1cf9f2524bb22311941bd0ae8, type: 2}
+  characterList: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7226681259148181566
+      type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
+      data:
+        baseNodeID:
+          Value: b3e1f4e4-51f3-43ca-bab1-abe1cd9e2aab
+        basePortID:
+          Value: 2c6b38d4-7642-4992-9f8c-13c9fb1dc6c8
+        targetNodeID:
+          Value: 259a37b8-6a3d-4ebe-a359-1857534586cc
+    - rid: 7226681259148181567
+      type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
+      data:
+        baseNodeID:
+          Value: 259a37b8-6a3d-4ebe-a359-1857534586cc
+        basePortID:
+          Value: de91f785-0c5c-4b2e-be6e-30f2d5066948
+        targetNodeID:
+          Value: 88048472-dca4-4184-944b-269183ce63f5
+--- !u!114 &1139420655787540440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafe474ade11482d982a1640a184afe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id:
+      Value: f9f3e48d-8ae5-4f0d-938c-70196ae74cc7
+    characterId:
+      Value: 
+    text: 
+    sprite: {fileID: 0}
+    position: {x: -221.24919, y: 383.99997}
+    ports: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &1636755330018712395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafe474ade11482d982a1640a184afe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id:
+      Value: b9b62cef-ea65-4617-900f-a06bd29745cc
+    characterId:
+      Value: 
+    text: 
+    sprite: {fileID: 0}
+    position: {x: 46.261234, y: 641.6229}
+    ports: []
+  references:
+    version: 2
+    RefIds: []

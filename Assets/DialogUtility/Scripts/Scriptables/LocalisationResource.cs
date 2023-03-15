@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using DialogUtilitySpruce;
 using UnityEngine;
 
@@ -9,6 +10,10 @@ public class LocalisationResource : ScriptableObject
     
     public string GetText(SerializableGuid guid)
     {
+        if (!texts.ContainsKey(guid))
+        {
+            return "";
+        }
         return texts[guid];
     }
 }

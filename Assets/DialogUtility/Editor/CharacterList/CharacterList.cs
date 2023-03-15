@@ -96,6 +96,11 @@ namespace DialogUtilitySpruce.Editor
         {
             return _localCharacterList.Select(x => x.Name).ToList();
         }
+        
+        public List<string> GetGlobalCharacterNames()
+        {
+            return globalCharacterDataList.Select(x => x.Name).ToList();
+        }
 
         public List<CharacterData> GetLocalCharactersListCopy()
         {

@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 022613a00ecc42df8fec3a74d6226a2d, type: 3}
-  m_Name: example
+  m_Name: some dialog
   m_EditorClassIdentifier: 
   texts:
     keys:
-    - Value: 8a98e4e2-dd5b-4c16-974d-105805f24536
-    - Value: c717ff50-b629-422a-9c73-aa09ebd5d448
-    - Value: e6d93788-35b9-4ff9-bbb5-b9647d9e0468
-    - Value: dfe2f1e9-3f97-4e59-8def-d5aad3e66dbf
-    - Value: 2f57a951-7005-4a79-8de4-5265cd9e5d1a
+    - Value: b3e1f4e4-51f3-43ca-bab1-abe1cd9e2aab
+    - Value: 259a37b8-6a3d-4ebe-a359-1857534586cc
+    - Value: b4377e1e-71bc-45eb-a384-98805c18c32e
+    - Value: 88048472-dca4-4184-944b-269183ce63f5
     values:
-    - dsfsfgd
-    - dfsgdsfg
-    - fg
-    - sdfg
-    - sdfgsdfg
+    - 
+    - vsddvs
+    - dsfsdfsdfsdf
+    - fsdfsdf

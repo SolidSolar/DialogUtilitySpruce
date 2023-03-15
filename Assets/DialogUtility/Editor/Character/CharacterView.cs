@@ -76,7 +76,7 @@ namespace DialogUtilitySpruce.Editor
             };
             
             _textField.RegisterCallback(_textFieldCallback);
-            _textField.value = _model.Name;
+            _textField.SetValueWithoutNotify(_model.Name);
             _model.OnTextChanged = _ => _textField.SetValueWithoutNotify(_model.Name);
             
             _includeToggle = _view.Q<Toggle>("includeToggle");

@@ -39,7 +39,7 @@ namespace DialogUtilitySpruce.Editor
         public bool SetText(string text)
         {
             var characterList = CharacterList.Instance;
-            if (!string.IsNullOrWhiteSpace(text) || characterList.GetLocalCharacterNames().Contains(text))
+            if (!string.IsNullOrWhiteSpace(text) && !characterList.GetGlobalCharacterNames().Contains(text))
             {
                 _model.Name = text;
                 characterList.OnLocalListChanged?.Invoke();

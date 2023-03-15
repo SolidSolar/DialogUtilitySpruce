@@ -92,8 +92,12 @@ namespace DialogUtilitySpruce.Editor
                     dataContainer = ScriptableObject.CreateInstance<DialogNodeDataContainer>();
                     dialogGraphContainer.dialogNodeDataList.Add(dataContainer);
                     AssetDatabase.AddObjectToAsset(dataContainer, dialogGraphContainer);
+                }else if (!AssetDatabase.Contains(dataContainer))
+                {
+                    AssetDatabase.AddObjectToAsset(dataContainer, dialogGraphContainer);
                 }
-                dataContainer.SetData(item.Model.GetDialogNodeData());
+                var dialogData = item.Model.GetDialogNodeData();
+                dataContainer.SetData(dialogData);
             }
             dialogGraphContainer.localisationResource = DialogLanguageHandler.Instance.GetLocalisationResource();
             dialogGraphContainer.startNodeId = _graphView.StartNodeId;
@@ -120,7 +124,7 @@ namespace DialogUtilitySpruce.Editor
                 _graphContainer = ScriptableObject.CreateInstance<DialogGraphContainer>();
             }
 
-            _clearGraph();
+            _graphView.ClearGraph();
             var handler = AssetDatabase.LoadAssetAtPath<DialogUtilityUsagesHandler>(DialogUtilityUsagesHandler.DialogUtilityUsagesHandlerPath);
             if (!handler)
             {
@@ -145,9 +149,13 @@ namespace DialogUtilitySpruce.Editor
             DialogUtilityUsagesHandler.Instance.UpdateDictionaryOfIdsAndContainers();
             
             CharacterList.Instance.UpdateLocalList(_graphContainer.characterList);
+            _graphView.DialogGraphContainer = _graphContainer;
             _graphView.StartNodeId = _graphContainer.startNodeId;
-            _createNodes();
-            _connectNodes();
+            foreach (var nodeData in _graphContainer.dialogNodeDataList)
+            {
+                _graphView.AddElement(_graphView.AddNode(nodeData));
+            }
+            _graphView.ConnectNodes(_graphContainer.nodeLinks);
             return _graphContainer;
         }
 
@@ -160,47 +168,6 @@ namespace DialogUtilitySpruce.Editor
             }
             
             DialogLanguageHandler.Instance.CreateLocalisationResourceCopy(copy, original);
-        }
-
-        private void _connectNodes()
-        {
-            foreach (DialogNode node in Nodes)
-            {
-                var connections = _graphContainer.nodeLinks.Where(x => x.baseNodeID == node.Model.Id).ToList();
-                foreach (NodeLinkData link in connections)
-                {
-                    var targetNodeGuid = link.targetNodeID;
-                    var targetNode = Nodes.First(x => x.Model.Id == targetNodeGuid);
-                    var tmpEdge = new Edge
-                    {
-                        output = node.outputContainer.Q<Port>(link.basePortID.Value),
-                        input = targetNode.inputContainer.Q<Port>()
-                    };
-                    tmpEdge.input.Connect(tmpEdge);
-                    tmpEdge.output.Connect(tmpEdge);
-                    _graphView.Add(tmpEdge);
-                }
-            }
-        }
-        
-        private void _createNodes()
-        {
-            foreach (var nodeData in _graphContainer.dialogNodeDataList)
-            {
-                var data = nodeData.GetDataCopy(_graphContainer.localisationResource);
-                var tmpNode = _graphView.AddNode(data);
-                tmpNode.SetPosition(new Rect(data.position, Vector2.zero));
-                _graphView.AddElement(tmpNode);
-            }
-        }
-
-        private void _clearGraph()
-        {
-            foreach (var node in Nodes)
-            {
-                Edges.Where(x => x.input.node == node).ToList().ForEach(edge => _graphView.Remove(edge));
-                _graphView.RemoveElement(node);
-            }
         }
     }
 }

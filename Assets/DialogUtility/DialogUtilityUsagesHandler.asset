@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dictionaryOfIdsAndContainers:
     keys:
-    - Value: f21509c9-459b-42f1-a47b-241882e71a7b
-    - Value: 6d2842cb-7bde-4655-b40e-78b795af6bac
+    - Value: 684150b6-2015-4301-ac87-ed99393c0989
+    - Value: 97510704-1d7e-482b-8a81-39eb55d72270
     values:
-    - {fileID: 11400000, guid: b4803dc3430db174bae1a7016a11b25e, type: 2}
+    - {fileID: 11400000, guid: cfd1065813f0fd948a7b8991097a044a, type: 2}
     - {fileID: 0}

@@ -11,7 +11,7 @@ namespace DialogUtilitySpruce
         public SerializableGuid Id => data.id;
         
         [SerializeField]
-        private DialogNodeData data;
+        private DialogNodeData data = new DialogNodeData();
 
         
         /// <summary>
@@ -31,6 +31,11 @@ namespace DialogUtilitySpruce
             }
 
             return copy;
+        }
+        
+        public DialogNodeData GetData()
+        {
+            return data;
         }
         
         public void SetData(DialogNodeData data)

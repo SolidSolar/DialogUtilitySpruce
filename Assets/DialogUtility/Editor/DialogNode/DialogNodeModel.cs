@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace DialogUtilitySpruce.Editor
 {
     public class DialogNodeModel
     {
-        public DialogNodeModel(DialogNodeData data)
+        public DialogNodeModel(DialogNodeDataContainer data)
         {
             DialogLanguageHandler languageHandler = DialogLanguageHandler.Instance;
             CharacterList characterList = CharacterList.Instance;
@@ -24,10 +25,8 @@ namespace DialogUtilitySpruce.Editor
                     }
                 }
             };
-            _data = data;
-            CharacterModel characterModel = characterList.FindCharacter(data.characterId);
-            if(characterModel!= null)
-                Character = characterModel;
+            _dataContainer = data;
+            _character = characterList.FindCharacter(Data.characterId);
             _resource = languageHandler.GetLocalisationResource();
             if (!_resource.texts.ContainsKey(Id))
             {
@@ -36,10 +35,19 @@ namespace DialogUtilitySpruce.Editor
             
             characterList.OnLocalListChanged += () =>
             {
-                if (characterModel!=null && !characterList.GetLocalCharacterNames().Contains(characterModel.Name))
+                if (_character!=null && !characterList.GetLocalCharacterNames().Contains(_character.Name))
                 {
-                    characterModel = null;
+                    _character = null;
                 }
+            };
+
+            Undo.undoRedoPerformed += () =>
+            {
+                OnTextUpdate?.Invoke(Text);
+                _character = CharacterList.Instance.FindCharacter(Data.characterId);
+                OnCharacterUpdate?.Invoke(_character);
+                OnSpriteUpdate?.Invoke(Sprite);
+                OnPortsUpdate?.Invoke(Ports);
             };
         }
 
@@ -48,47 +56,53 @@ namespace DialogUtilitySpruce.Editor
         public Action<string> OnTextUpdate { get; set; }
         public Action<Sprite> OnSpriteUpdate { get; set; }
         public Action<List<PortConditionData>> OnPortsUpdate { get; set; }
-        public SerializableGuid Id => _data.id;
+        public SerializableGuid Id => Data.id;
         public CharacterModel Character
         {
             get => _character;
             set
             {
+                Undo.RecordObject(_dataContainer, "Set node character");
                 _character = value;
-                _data.characterId = _character.Id;
+                Data.characterId = _character?.Id ?? Guid.Empty;
                 OnCharacterUpdate?.Invoke(_character);
             }
         }
         public string Text
         {
-            get =>_resource.texts[Id];
+            get => _resource.GetText(Id);
             set
             {
+                Undo.RecordObject(_resource, "Set node text");
                 _resource.texts[Id] = value;
+                
                 OnTextUpdate?.Invoke(value);
             }
         }
 
-        public Sprite OverrideSprite
+        public Sprite Sprite
         {
-            get => _data.sprite;
+            get => Data.sprite;
             set
             {
-                _data.sprite = value;
+                Undo.RecordObject(_dataContainer, "Set node sprite");
+                Data.sprite = value;
                 OnSpriteUpdate?.Invoke(value);
             }
         }
 
-        public List<PortConditionData> Ports => _data.ports;
+        public List<PortConditionData> Ports => Data.ports;
 
         public void AddConditionPort()
         {
+            Undo.RecordObject(_dataContainer, "Add node port");
             Ports.Add(new PortConditionData());
             OnPortsUpdate?.Invoke(Ports);
         }
 
         public void RemoveConditionPort(SerializableGuid id)
         {
+            Undo.RecordObject(_dataContainer, "Remove node port");
             Ports.RemoveAll(x => x.id == id);
             OnPortsUpdate?.Invoke(Ports);
         }
@@ -100,15 +114,17 @@ namespace DialogUtilitySpruce.Editor
         
         public DialogNodeData GetDialogNodeData()
         {
-            return _data;
+            return Data;
         }
 
-        public void SetPosition(Vector2 newPos)
+        public void SetPosition(Rect newPos)
         {
-            _data.position = newPos;
+            Data.position = newPos.position;
         }
+
+        private DialogNodeData Data => _dataContainer.GetData();
         
-        private readonly DialogNodeData _data;
+        private readonly DialogNodeDataContainer _dataContainer;
         private CharacterModel _character;
         private LocalisationResource _resource;
     }

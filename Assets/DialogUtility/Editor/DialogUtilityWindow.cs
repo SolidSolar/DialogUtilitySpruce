@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -41,6 +42,11 @@ namespace DialogUtilitySpruce.Editor
             window._fileName = filename;
             _initialize(window);
             return window;
+        }
+
+        private void OnDestroy()
+        {
+            Undo.ClearAll();
         }
 
         private void OnDisable()
@@ -128,6 +134,7 @@ namespace DialogUtilitySpruce.Editor
             window.titleContent = new GUIContent("DialogUtilitySpruce");
             window._constructWindow();
             window._loadGraph();
+            window._graphView.DialogGraphContainer = window._graphContainer;
             window._characterListView.Add(CharactersListViewFactory.GetList());
             window._setLanguage();
         }

@@ -12,7 +12,7 @@ namespace DialogUtilitySpruce
             return (DialogNodeData) data.MemberwiseClone();
         }
         
-        public SerializableGuid id;
+        public SerializableGuid id = Guid.NewGuid();
         public SerializableGuid characterId;
         public string text;
         public Sprite sprite;

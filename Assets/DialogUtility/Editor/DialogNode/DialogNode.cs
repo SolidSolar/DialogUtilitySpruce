@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -33,13 +34,17 @@ namespace DialogUtilitySpruce.Editor
             {
                 controller.ChangeCharacter(evt.newValue);
             });
-            dropdown.SetValueWithoutNotify(model.Character != null ? CharacterList.Instance.FindCharacter(model.Character.Id)?.Name : "<none>");
+            dropdown.SetValueWithoutNotify(model.Character != null ? model.Character.Name : "<none>");
 
             model.OnCharacterUpdate = data =>
             {
                 if (model.Character != null && data.Id == model.Character.Id)
                 {
                     dropdown.SetValueWithoutNotify(model.Character.Name);
+                }
+                else
+                {
+                    dropdown.SetValueWithoutNotify("<none>");
                 }
             }; 
             
@@ -52,7 +57,7 @@ namespace DialogUtilitySpruce.Editor
 
             model.OnPortsUpdate?.Invoke(model.Ports);
 
-            model.OnPortsUpdate += list =>
+            model.OnPortsUpdate = list =>
             {
                 foreach (var item in list)
                 {
@@ -60,6 +65,12 @@ namespace DialogUtilitySpruce.Editor
                         _addPort(item.id, item.condition);
                     else
                         _updatePort(item.id, item.condition);
+                }
+
+                var l = _ports.Where(x => !list.Exists(y => y.id == x.Key)).ToList();
+                for(int i = 0; i< l.Count; i++)
+                {
+                    _deletePort(l[i].Key, l[i].Value);
                 }
             };
             outputContainer.Add(addPortButtonUxml);
@@ -88,9 +99,10 @@ namespace DialogUtilitySpruce.Editor
             {
                 overrideSprite.SetValueWithoutNotify(sprite);
             };
-            overrideSprite.SetValueWithoutNotify(model.OverrideSprite);
-            
+            overrideSprite.SetValueWithoutNotify(model.Sprite);
+
             _radioButton = this.Q<RadioButton>("startNode");
+            
             
             Port port = _generatePort(Direction.Input);
             inputContainer.Add(port);
@@ -121,7 +133,7 @@ namespace DialogUtilitySpruce.Editor
             }
         }
         
-        private Port _generatePort(Direction portDirection, Port.Capacity capacity = Port.Capacity.Single)
+        private Port _generatePort(Direction portDirection, Port.Capacity capacity = Port.Capacity.Multi)
         {
             return InstantiatePort(Orientation.Horizontal, portDirection, capacity, typeof(float));
         }
@@ -136,11 +148,7 @@ namespace DialogUtilitySpruce.Editor
             var removeButton = nodePortUxml.Q<Button>("remove");
             removeButton.clicked += () =>
             {
-                OnPortDelete?.Invoke(port);
-                RefreshPorts();
-                _ports.Remove(id);
-                outputContainer.Remove(port);
-                Controller.RemoveConditionPort(id);
+                _deletePort(id, port);
             }; 
 
             var condition = nodePortUxml.Q<ObjectField>();
@@ -153,6 +161,15 @@ namespace DialogUtilitySpruce.Editor
             _ports.Add(id, port);
             outputContainer.Insert(outputContainer.childCount-1,port);
             RefreshExpandedState();
+        }
+
+        private void _deletePort(SerializableGuid id, Port port)
+        {
+            OnPortDelete?.Invoke(port);
+            RefreshPorts();
+            _ports.Remove(id);
+            outputContainer.Remove(port);
+            Controller.RemoveConditionPort(id);
         }
 
         private void _updatePort(SerializableGuid id, Condition value)

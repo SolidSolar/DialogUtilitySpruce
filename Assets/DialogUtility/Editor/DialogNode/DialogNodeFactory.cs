@@ -1,16 +1,13 @@
 ﻿using System;
+using UnityEngine;
 
 namespace DialogUtilitySpruce.Editor
 {
     public static class DialogNodeFactory
     {
-        public static DialogNodeModel GetNode(DialogNodeData nodeData = default)
+        public static DialogNodeModel GetNode(DialogNodeDataContainer nodeData)
         {
-            DialogNodeModel model = new (nodeData ?? new DialogNodeData
-            {
-                id = Guid.NewGuid(),
-                text = ""
-            });
+            DialogNodeModel model = new (nodeData);
             
             DialogNodeController controller = new (model);
 

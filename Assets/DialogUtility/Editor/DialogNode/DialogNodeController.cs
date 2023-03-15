@@ -14,7 +14,7 @@ namespace DialogUtilitySpruce.Editor
 
         public void SetPosition(Rect newPos)
         {
-            _model.SetPosition(newPos.position);
+            _model.SetPosition(newPos);
         }
        
         
@@ -25,7 +25,7 @@ namespace DialogUtilitySpruce.Editor
         
         public void ChangeSprite(ChangeEvent<Object> @event)
         {
-            _model.OverrideSprite = (Sprite)@event.newValue;
+            _model.Sprite = (Sprite)@event.newValue;
         }
 
         public void ChangeCharacter(string characterName)
