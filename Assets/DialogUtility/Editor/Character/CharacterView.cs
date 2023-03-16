@@ -83,8 +83,24 @@ namespace DialogUtilitySpruce.Editor
             if(_toggleCallback != null)
                 _includeToggle.UnregisterCallback(_toggleCallback);
                 
-            _toggleCallback = evt => _controller.IncludeInCurrentDialog(evt.newValue);
+            _toggleCallback = evt =>
+            {
+                bool decision = evt.newValue || EditorUtility.DisplayDialog(
+                    title: "Remove character from local pool",
+                    message: $"Character will be removed from local character pool, this action cannot be undone. Proceed anyway?",
+                    ok: "Yes",
+                    cancel: "No"
+                );
+                if(decision)
+                    _controller.IncludeInCurrentDialog(evt.newValue);
+                else
+                {
+                    _includeToggle.SetValueWithoutNotify(true);
+                }
+            };
             _includeToggle.RegisterCallback(_toggleCallback);
+            
+            
             _includeToggle.SetValueWithoutNotify(_model.IsIncludedInCurrentDialog());
             
             _deleteButton = _view.Q<Button>("delete");

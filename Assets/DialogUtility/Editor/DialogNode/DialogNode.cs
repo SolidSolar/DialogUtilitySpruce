@@ -108,6 +108,7 @@ namespace DialogUtilitySpruce.Editor
             inputContainer.Add(port);
             RefreshExpandedState();
         }
+
         public Action<Port> OnPortDelete { get; set; }
         public DialogNodeModel Model { get; }
         private DialogNodeController Controller { get; }

@@ -17,24 +17,14 @@ MonoBehaviour:
       Value: d0547b0c-dd5f-4cad-9f35-448ee3329dd7
     usages: []
     icon: {fileID: 21300000, guid: e92527f6d0fe45342ab542b47346d45f, type: 3}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+    resource: {fileID: 11400000, guid: 3664260d73ec2df41a79737c45488679, type: 2}
   - id:
       Value: e2366bff-f32f-470e-983c-e667666565e3
     usages: []
     icon: {fileID: 21300000, guid: a04ecc9d5e12d5d449077414eb86635e, type: 3}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+    resource: {fileID: 11400000, guid: 3664260d73ec2df41a79737c45488679, type: 2}
   - id:
       Value: d88820cc-9b99-403a-afee-e0246a3658da
     usages: []
     icon: {fileID: 21300000, guid: 56e456ab0f7f79a4dbabcc9079c49a94, type: 3}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
-  - id:
-      Value: ea0b2959-ff9c-4500-80ca-037a422528a7
-    usages: []
-    icon: {fileID: 0}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
-  - id:
-      Value: 2d0a678e-2772-406f-b28d-11a21438ed84
-    usages: []
-    icon: {fileID: 0}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+    resource: {fileID: 11400000, guid: 3664260d73ec2df41a79737c45488679, type: 2}

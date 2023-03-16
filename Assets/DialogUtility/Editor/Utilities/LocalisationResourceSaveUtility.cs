@@ -14,8 +14,14 @@ namespace DialogUtilitySpruce.Editor
         public static void SaveLocalisationResource(LocalisationResource resource, string language, string containerName)
         {
             var path = string.Format(LocalisationPath, language, containerName);
-            var data = resource;
+            var data =  AssetDatabase.LoadAssetAtPath<LocalisationResource>(path);
             
+            //first save scenario, no real data exists yet
+            if (!data)
+            {
+                data = ScriptableObject.CreateInstance<LocalisationResource>();
+            }
+
             if(!AssetDatabase.Contains(data))
             {
                 var splitPath = path.Split('/');
@@ -30,14 +36,14 @@ namespace DialogUtilitySpruce.Editor
 
                     subpath += "/" + splitPath[i];
                 }
-                AssetDatabase.CreateAsset(resource, subpath);
+                AssetDatabase.CreateAsset(data, subpath);
             }
             else
             {
                 AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(data),
                     data.name);
             }
-            
+            LocalisationResource.Copy(resource, data);
             
             AssetDatabase.SaveAssets();
         }
@@ -80,8 +86,11 @@ namespace DialogUtilitySpruce.Editor
             {
                 localisationData = ScriptableObject.CreateInstance<LocalisationResource>();
             }
+
+            var copy = ScriptableObject.CreateInstance<LocalisationResource>();
+            LocalisationResource.Copy(localisationData, copy);
             
-            return localisationData;
+            return copy;
         }
 
         public static LocalisationResource LoadCharacterLocalisationResource(string language)

@@ -18,19 +18,19 @@ namespace DialogUtilitySpruce.Editor
                 _graphView = graphView
             };
         }
-        
+
+        private DialogGraphContainer _virtualContainer;
         private List<DialogNode> Nodes => _graphView.nodes.ToList().Cast<DialogNode>().ToList();
         private List<Edge> Edges => _graphView.edges.ToList();
         private DialogGraphView _graphView;
         private DialogGraphContainer _graphContainer;
-        private DialogUtilityUsagesHandler _usagesHandler = DialogUtilityUsagesHandler.Instance;
+        private DialogUtilityUsagesHandler _usagesHandler => DialogUtilityUsagesHandler.Instance;
         private const string Path = "Assets/Resources/DialogUtility/Containers/{0}.asset";
         
         public void Save(string filename)
         {
             var path = string.Format(Path, filename);
-            var dialogGraphContainer = _usagesHandler.CurrentContainer;
-            if (!AssetDatabase.Contains(dialogGraphContainer))
+            if (!AssetDatabase.Contains(_graphContainer))
             {
                 var splitPath = path.Split('/');
                 var subpath = "Assets";
@@ -44,40 +44,42 @@ namespace DialogUtilitySpruce.Editor
                     subpath += "/" + splitPath[i];
                 }
                 
-                dialogGraphContainer = ScriptableObject.CreateInstance<DialogGraphContainer>();
-                AssetDatabase.CreateAsset(dialogGraphContainer, subpath);
+                _graphContainer = ScriptableObject.CreateInstance<DialogGraphContainer>();
+                AssetDatabase.CreateAsset(_graphContainer, subpath);
                 AssetDatabase.SaveAssets();
             }else
             {
-                AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(dialogGraphContainer),
-                        dialogGraphContainer.name);
+                AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(_graphContainer),
+                    _graphContainer.name);
             }
             
-            dialogGraphContainer.dialogNodeDataList.RemoveAll(x =>
+            DialogGraphContainer.Copy(_virtualContainer,_graphContainer);
+            
+            _graphContainer.dialogNodeDataList.RemoveAll(x =>
             {
                 return !Nodes.Exists(y => y.Model.Id == x.Id);
             });
-            dialogGraphContainer.nodeLinks.Clear();
+            _graphContainer.nodeLinks.Clear();
             
             var connectedPorts = Edges.Where(x => x.input.node != null||x.output.node!=null).ToArray();
             foreach (Edge edge in connectedPorts)
             {
                 var output = (DialogNode) edge.output.node;
                 var input = (DialogNode) edge.input.node;
-                dialogGraphContainer.nodeLinks.Add(new NodeLinkData { 
+                _graphContainer.nodeLinks.Add(new NodeLinkData { 
                     baseNodeID = output.Model.Id,
                     basePortID = Guid.Parse(edge.output.Q<Port>().name),
                     targetNodeID = input.Model.Id
                 });
             }
             
-            Object[] assets = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(dialogGraphContainer));
+            Object[] assets = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(_graphContainer));
             if (assets.Length > 0)
             {
                 foreach (var v in assets)
                 {
                     if (v is null || v is DialogNodeDataContainer dataContainer && 
-                        !dialogGraphContainer.dialogNodeDataList.Exists(x=>x.Id == dataContainer.Id))
+                        !_graphContainer.dialogNodeDataList.Exists(x=>x.Id == dataContainer.Id))
                     {
                         Object.DestroyImmediate(v, true);
                     }
@@ -86,24 +88,23 @@ namespace DialogUtilitySpruce.Editor
             
             foreach(var item in Nodes)
             {
-                DialogNodeDataContainer dataContainer = dialogGraphContainer.dialogNodeDataList.Find(x => x.Id == item.Model.Id);
+                DialogNodeDataContainer dataContainer = _graphContainer.dialogNodeDataList.Find(x => x.Id == item.Model.Id);
                 if (dataContainer == null)
                 {
                     dataContainer = ScriptableObject.CreateInstance<DialogNodeDataContainer>();
-                    dialogGraphContainer.dialogNodeDataList.Add(dataContainer);
-                    AssetDatabase.AddObjectToAsset(dataContainer, dialogGraphContainer);
+                    _graphContainer.dialogNodeDataList.Add(dataContainer);
+                    AssetDatabase.AddObjectToAsset(dataContainer, _graphContainer);
                 }else if (!AssetDatabase.Contains(dataContainer))
                 {
-                    AssetDatabase.AddObjectToAsset(dataContainer, dialogGraphContainer);
+                    AssetDatabase.AddObjectToAsset(dataContainer, _graphContainer);
                 }
                 var dialogData = item.Model.GetDialogNodeData();
                 dataContainer.SetData(dialogData);
             }
-            dialogGraphContainer.localisationResource = DialogLanguageHandler.Instance.GetLocalisationResource();
-            dialogGraphContainer.startNodeId = _graphView.StartNodeId;
-            dialogGraphContainer.characterList = CharacterList.Instance.GetLocalCharactersListCopy();
-            DialogLanguageHandler.Instance.Save(dialogGraphContainer);
-            _usagesHandler.CurrentContainer = dialogGraphContainer;
+            _graphContainer.localisationResource = DialogLanguageHandler.Instance.GetLocalisationResource();
+            _graphContainer.characterList = CharacterList.Instance.GetLocalCharactersListCopy();
+            DialogLanguageHandler.Instance.Save(_graphContainer);
+            _usagesHandler.CurrentContainer = _graphContainer;
             _usagesHandler.UpdateDictionaryOfIdsAndContainers();
             AssetDatabase.SaveAssets();
         }
@@ -124,7 +125,6 @@ namespace DialogUtilitySpruce.Editor
                 _graphContainer = ScriptableObject.CreateInstance<DialogGraphContainer>();
             }
 
-            _graphView.ClearGraph();
             var handler = AssetDatabase.LoadAssetAtPath<DialogUtilityUsagesHandler>(DialogUtilityUsagesHandler.DialogUtilityUsagesHandlerPath);
             if (!handler)
             {
@@ -145,18 +145,18 @@ namespace DialogUtilitySpruce.Editor
             {
                 _processCopy(_graphContainer, original);
             }
-            _graphContainer.localisationResource = DialogLanguageHandler.Instance.GetLocalisationResource();
+
+            if (!_virtualContainer)
+            {
+                _virtualContainer = ScriptableObject.CreateInstance<DialogGraphContainer>();
+            }
+            DialogGraphContainer.Copy(_graphContainer, _virtualContainer);
+            _virtualContainer.localisationResource = DialogLanguageHandler.Instance.GetLocalisationResource();
             DialogUtilityUsagesHandler.Instance.UpdateDictionaryOfIdsAndContainers();
             
-            CharacterList.Instance.UpdateLocalList(_graphContainer.characterList);
-            _graphView.DialogGraphContainer = _graphContainer;
-            _graphView.StartNodeId = _graphContainer.startNodeId;
-            foreach (var nodeData in _graphContainer.dialogNodeDataList)
-            {
-                _graphView.AddElement(_graphView.AddNode(nodeData));
-            }
-            _graphView.ConnectNodes(_graphContainer.nodeLinks);
-            return _graphContainer;
+            CharacterList.Instance.UpdateLocalList(_virtualContainer.characterList);
+            
+            return _virtualContainer;
         }
 
         private void _processCopy(DialogGraphContainer copy, DialogGraphContainer original)

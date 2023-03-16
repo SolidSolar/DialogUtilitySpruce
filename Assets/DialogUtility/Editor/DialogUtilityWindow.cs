@@ -1,4 +1,3 @@
-using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -12,8 +11,8 @@ namespace DialogUtilitySpruce.Editor
             get => _graphContainer.name;
             set => _graphContainer.name = value;
         }
-        private DialogUtilitySaveUtility SaveUtility => DialogUtilitySaveUtility.GetDialogUtilitySaveUtilityInstance(_graphView);
-
+        
+        private DialogUtilitySaveUtility _saveUtility;
         private string _fileName;
         private DialogGraphView _graphView;
         private DialogGraphContainer _graphContainer;
@@ -64,12 +63,20 @@ namespace DialogUtilitySpruce.Editor
                 EditorUtility.DisplayDialog("Invalid filename: "+ ContainerName, "Enter valid filename and try again", "ok");
                 return;
             }
-            SaveUtility.Save(ContainerName);
+            _saveUtility.Save(ContainerName);
         }
 
         private void _loadGraph()
         {
-            _graphContainer = SaveUtility.Load(_fileName);
+            _graphView.ClearGraph();
+            _graphContainer = _saveUtility.Load(_fileName);
+            _graphView.DialogGraphContainer = _graphContainer;
+            
+            foreach (var nodeData in _graphContainer.dialogNodeDataList)
+            {
+                _graphView.AddElement(_graphView.AddNode(nodeData));
+            }
+            _graphView.ConnectNodes(_graphContainer.nodeLinks);
         }
         
         private void _constructWindow()
@@ -133,6 +140,7 @@ namespace DialogUtilitySpruce.Editor
             }
             window.titleContent = new GUIContent("DialogUtilitySpruce");
             window._constructWindow();
+            window._saveUtility = DialogUtilitySaveUtility.GetDialogUtilitySaveUtilityInstance(window._graphView);
             window._loadGraph();
             window._graphView.DialogGraphContainer = window._graphContainer;
             window._characterListView.Add(CharactersListViewFactory.GetList());

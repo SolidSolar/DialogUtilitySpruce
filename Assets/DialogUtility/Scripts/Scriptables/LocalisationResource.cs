@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using DialogUtilitySpruce;
 using UnityEngine;
 
 [Serializable]
@@ -15,5 +13,14 @@ public class LocalisationResource : ScriptableObject
             return "";
         }
         return texts[guid];
+    }
+
+    public static void Copy(LocalisationResource origin, LocalisationResource destination)
+    {
+        destination.texts = new DictionaryOfSerializableGuidAndString();
+        foreach (var kvp in origin.texts)
+        {
+            destination.texts.Add(kvp.Key, kvp.Value);
+        }
     }
 }

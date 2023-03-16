@@ -28,8 +28,6 @@ namespace DialogUtilitySpruce.Editor
             Selection.objects = new[] {_languageSettings};
         }
 
-        
-        
         public void Save(DialogGraphContainer container)
         {
             _container = container;

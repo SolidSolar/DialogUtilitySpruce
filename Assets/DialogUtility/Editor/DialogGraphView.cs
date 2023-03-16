@@ -13,7 +13,6 @@ namespace DialogUtilitySpruce.Editor
         public new class UxmlFactory : UxmlFactory<DialogGraphView, UxmlTraits> { }
 
         public DialogGraphContainer DialogGraphContainer;
-        public SerializableGuid StartNodeId;
         private Action<SerializableGuid> _onStartNodeIdChanged;
 
         public new class UxmlTraits : VisualElement.UxmlTraits
@@ -32,7 +31,7 @@ namespace DialogUtilitySpruce.Editor
             this.AddManipulator(new RectangleSelector());
             _onStartNodeIdChanged += guid =>
             {
-                StartNodeId = guid;
+                DialogGraphContainer.startNodeId = guid;
             };
 
             graphViewChanged += change =>
@@ -48,19 +47,16 @@ namespace DialogUtilitySpruce.Editor
                         
                         if (el is Edge ed)
                         {
-                            //removing all eleted edges from container node links if presented
+                            //removing all deleted edges from container node links if presented
                             var bId = ((DialogNode) ed.output.node).Model.Id;
                             var tId =  ((DialogNode) ed.input.node).Model.Id;
                             var bpId =  (SerializableGuid) Guid.Parse(ed.output.Q<Port>().name);
-                            if (DialogGraphContainer.nodeLinks.Exists(x =>
-                                x.baseNodeID == bId && x.basePortID == bpId && x.targetNodeID == tId))
+                            var l = DialogGraphContainer.nodeLinks.Find(x =>
+                                x.baseNodeID == bId && x.basePortID == bpId && x.targetNodeID == tId);
+                            if (l!=null)
                             {
-                                DialogGraphContainer.nodeLinks.Add(new NodeLinkData
-                                {
-                                    baseNodeID = ((DialogNode) ed.output.node).Model.Id,
-                                    basePortID = Guid.Parse(ed.output.Q<Port>().name),
-                                    targetNodeID = ((DialogNode) ed.input.node).Model.Id
-                                });
+                                //Undo.RecordObject(DialogGraphContainer, "Remove edge");
+                                DialogGraphContainer.nodeLinks.Remove(l);
                             }
                         }
                     }
@@ -77,6 +73,7 @@ namespace DialogUtilitySpruce.Editor
                         if (!DialogGraphContainer.nodeLinks.Exists(x =>
                             x.baseNodeID == bId && x.basePortID == bpId && x.targetNodeID == tId))
                         {
+                            //Undo.RecordObject(DialogGraphContainer, "Create edge");
                             DialogGraphContainer.nodeLinks.Add(new NodeLinkData
                             {
                                 baseNodeID = ((DialogNode) ed.output.node).Model.Id,
@@ -132,11 +129,11 @@ namespace DialogUtilitySpruce.Editor
                     _onStartNodeIdChanged?.Invoke(model.Id);
                 }
             });
-            radioButton.SetValueWithoutNotify(StartNodeId == model.Id);
+            radioButton.SetValueWithoutNotify(DialogGraphContainer.startNodeId == model.Id);
             
             _onStartNodeIdChanged += node.OnStartNodeIdChanged;
 
-            if (!StartNodeId)
+            if (!DialogGraphContainer.startNodeId)
             {
                 _onStartNodeIdChanged?.Invoke(model.Id);
             }
