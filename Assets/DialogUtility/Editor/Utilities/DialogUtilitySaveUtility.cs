@@ -50,7 +50,7 @@ namespace DialogUtilitySpruce.Editor
             }else
             {
                 AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(_graphContainer),
-                    _graphContainer.name);
+                    _virtualContainer.name);
             }
             
             DialogGraphContainer.Copy(_virtualContainer,_graphContainer);

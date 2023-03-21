@@ -7,10 +7,10 @@ using UnityEngine;
 public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
     [SerializeField] 
-    private List<TKey> keys = new();
+    protected List<TKey> keys = new();
 
     [SerializeField] 
-    private List<TValue> values = new();
+    protected List<TValue> values = new();
 
     // save the dictionary to lists
     public void OnBeforeSerialize()

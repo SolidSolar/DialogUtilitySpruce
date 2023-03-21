@@ -9,11 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88aa123ada8f421cb84e09836e8f6a2c, type: 3}
-  m_Name: DialogUtilityUsagesHandler
+  m_Script: {fileID: 11500000, guid: 022613a00ecc42df8fec3a74d6226a2d, type: 3}
+  m_Name: some dialog 4
   m_EditorClassIdentifier: 
-  dictionaryOfIdsAndContainers:
+  keys:
+  - Value: 
+  - Value: 
+  values:
+  - 
+  - 
+  texts:
     keys:
-    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    - Value: dc58cb96-5d94-4355-a198-69f66e944415
+    - Value: 4f03bb3a-9ea0-4caf-a30e-211bca2b9e5b
     values:
-    - {fileID: 11400000, guid: babda4e7d14d3004f948687a10955cd5, type: 2}
+    - jkhjk
+    - cmnbvnbm

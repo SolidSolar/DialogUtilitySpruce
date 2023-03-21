@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -163,7 +162,6 @@ namespace DialogUtilitySpruce.Editor
             if (res) return res;
             Debug.LogError("Localisation resource copy failed!");
             return null;
-
         }
         
     }

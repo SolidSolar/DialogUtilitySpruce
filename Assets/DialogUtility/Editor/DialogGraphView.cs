@@ -34,6 +34,30 @@ namespace DialogUtilitySpruce.Editor
                 DialogGraphContainer.startNodeId = guid;
             };
 
+            Undo.undoRedoPerformed += () =>
+            {
+                ClearGraph();
+                foreach (var nodeData in DialogGraphContainer.dialogNodeDataList)
+                {
+                    AddElement(AddNode(nodeData));
+                }
+                ConnectNodes(DialogGraphContainer.nodeLinks);
+            };
+            
+            void OnDeleteSelection(string operationName, AskUser askUser)
+            {
+                for (int i = 0; i< selection.Count; i++)
+                {
+                    if (selection[i] is Edge edge)
+                    {
+                        Undo.RecordObject(DialogGraphContainer, "Remove edge");
+                        DeleteSelection();
+                    }
+                }
+            }
+
+            deleteSelection += OnDeleteSelection;
+            
             graphViewChanged += change =>
             {
                 if (change.elementsToRemove != null)
@@ -55,7 +79,7 @@ namespace DialogUtilitySpruce.Editor
                                 x.baseNodeID == bId && x.basePortID == bpId && x.targetNodeID == tId);
                             if (l!=null)
                             {
-                                //Undo.RecordObject(DialogGraphContainer, "Remove edge");
+                                Undo.RecordObject(DialogGraphContainer, "Remove edge");
                                 DialogGraphContainer.nodeLinks.Remove(l);
                             }
                         }
@@ -73,7 +97,7 @@ namespace DialogUtilitySpruce.Editor
                         if (!DialogGraphContainer.nodeLinks.Exists(x =>
                             x.baseNodeID == bId && x.basePortID == bpId && x.targetNodeID == tId))
                         {
-                            //Undo.RecordObject(DialogGraphContainer, "Create edge");
+                            Undo.RecordObject(DialogGraphContainer, "Add edge");
                             DialogGraphContainer.nodeLinks.Add(new NodeLinkData
                             {
                                 baseNodeID = ((DialogNode) ed.output.node).Model.Id,
@@ -140,10 +164,13 @@ namespace DialogUtilitySpruce.Editor
 
             void OnDeleteSelection(string operationName, AskUser askUser)
             {
-                Undo.RecordObject(DialogGraphContainer, "Delete node");
-                DialogGraphContainer.dialogNodeDataList.Remove(nodeData);
-                DeleteNode(node);
-                deleteSelection -= OnDeleteSelection;
+                if (selection.Contains(node))
+                {
+                    Undo.RecordObject(DialogGraphContainer, "Delete node");
+                    DialogGraphContainer.dialogNodeDataList.Remove(nodeData);
+                    DeleteNode(node);
+                    deleteSelection -= OnDeleteSelection;
+                }
             }
 
             deleteSelection += OnDeleteSelection;
@@ -196,7 +223,14 @@ namespace DialogUtilitySpruce.Editor
                     var selections = selection.ToList();
                     foreach (ISelectable selectable in selections)
                     {
-                        DeleteNode((DialogNode)selectable);
+                        if (selectable is DialogNode)
+                        {
+                            DeleteNode((DialogNode) selectable);
+                        }
+                        if (selectable is Edge edge)
+                        {
+                            DeleteElements(new []{ edge });
+                        }
                     }
                 });
         }
@@ -220,6 +254,8 @@ namespace DialogUtilitySpruce.Editor
                     tmpEdge.output.Connect(tmpEdge);
                     if(!edges.ToList().Exists(x=>x.input == tmpEdge.input && x.output == tmpEdge.output))
                         Add(tmpEdge);
+                    tmpEdge.UpdatePresenterPosition();
+                    
                 }
             }
         }
@@ -228,7 +264,7 @@ namespace DialogUtilitySpruce.Editor
         {
             foreach (var node in nodes)
             {
-                edges.Where(x => x.input.node == node).ToList().ForEach(Remove);
+                edges.ToList().ForEach(x=>x.RemoveFromHierarchy());
                 RemoveElement(node);
             }
         }

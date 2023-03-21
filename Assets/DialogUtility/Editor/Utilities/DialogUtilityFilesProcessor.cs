@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using UnityEditor;
-using UnityEngine;
 
 namespace DialogUtilitySpruce.Editor
 {
@@ -23,6 +22,7 @@ namespace DialogUtilitySpruce.Editor
 
         private static AssetDeleteResult OnWillDeleteAsset(string assetPath, RemoveAssetOptions options)
         {
+            
             if (assetPath.Contains(ContainersPath)&&assetPath.Contains(".asset"))
             {
                 var fileName = Path.GetFileNameWithoutExtension(assetPath);
