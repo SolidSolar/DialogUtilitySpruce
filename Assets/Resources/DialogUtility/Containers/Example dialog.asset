@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5692148287772140643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafe474ade11482d982a1640a184afe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    id:
+      Value: 1a302ba2-22e8-4932-9a1a-a515fad6b415
+    characterId:
+      Value: 6814a8f5-949e-47e6-8848-a647fe727c95
+    text: 
+    sprite: {fileID: 0}
+    position: {x: 758, y: 784.60175}
+    ports: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &-1295589649781287673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,25 +65,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96af60eaeaa6420497e02b399bb92455, type: 3}
-  m_Name: some dialog 4
+  m_Name: Example dialog
   m_EditorClassIdentifier: 
   id:
     Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
   startNodeId:
     Value: dc58cb96-5d94-4355-a198-69f66e944415
   nodeLinks:
-  - rid: 7226681393531584610
-  - rid: 7226681393531584611
+  - rid: 7226681393531584663
+  - rid: 7226681393531584664
+  - rid: 7226681393531584665
   dialogNodeDataList:
   - {fileID: 2550680873880488285}
   - {fileID: -1295589649781287673}
   - {fileID: 3933558366655010433}
+  - {fileID: -5692148287772140643}
   localisationResource: {fileID: 0}
-  characterList: []
+  characterList:
+  - id:
+      Value: 4e06e78f-1197-4a77-bb34-0dae858b44d8
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
+    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+  - id:
+      Value: cde50bef-fb73-45a0-af48-8563860a6564
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: 3a0c527d7f890d64a9b56b086e6e766a, type: 3}
+    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+  - id:
+      Value: f1f9adff-4df2-4830-99d2-dafe0b1fdba7
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: 6fac4e39926fd9c4ca2ba4416160a857, type: 3}
+    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+  - id:
+      Value: 6814a8f5-949e-47e6-8848-a647fe727c95
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: fd098fb4cf57bad419701c802e442b7e, type: 3}
+    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
   references:
     version: 2
     RefIds:
-    - rid: 7226681393531584610
+    - rid: 7226681393531584663
       type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
       data:
         baseNodeID:
@@ -68,7 +118,7 @@ MonoBehaviour:
           Value: 25b54f73-07db-49d1-a4d9-1d27888d0ffa
         targetNodeID:
           Value: 4f03bb3a-9ea0-4caf-a30e-211bca2b9e5b
-    - rid: 7226681393531584611
+    - rid: 7226681393531584664
       type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
       data:
         baseNodeID:
@@ -77,6 +127,15 @@ MonoBehaviour:
           Value: 20fa7b6e-d7e1-4435-b09a-b596f0439758
         targetNodeID:
           Value: 12122df4-c049-416d-b6a1-33c8713ace4b
+    - rid: 7226681393531584665
+      type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
+      data:
+        baseNodeID:
+          Value: dc58cb96-5d94-4355-a198-69f66e944415
+        basePortID:
+          Value: 3f361a37-9206-44d6-a97d-8e290e71b0ee
+        targetNodeID:
+          Value: 1a302ba2-22e8-4932-9a1a-a515fad6b415
 --- !u!114 &2550680873880488285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +159,7 @@ MonoBehaviour:
     ports:
     - rid: 7226681393531584513
     - rid: 7226681393531584562
+    - rid: 7226681393531584634
   references:
     version: 2
     RefIds:
@@ -114,7 +174,13 @@ MonoBehaviour:
       data:
         id:
           Value: 20fa7b6e-d7e1-4435-b09a-b596f0439758
-        condition: {fileID: 0}
+        condition: {fileID: 11400000, guid: 035d1d8625fec1e449a05502010c5eba, type: 2}
+    - rid: 7226681393531584634
+      type: {class: PortConditionData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
+      data:
+        id:
+          Value: 3f361a37-9206-44d6-a97d-8e290e71b0ee
+        condition: {fileID: 11400000, guid: 035d1d8625fec1e449a05502010c5eba, type: 2}
 --- !u!114 &3933558366655010433
 MonoBehaviour:
   m_ObjectHideFlags: 0

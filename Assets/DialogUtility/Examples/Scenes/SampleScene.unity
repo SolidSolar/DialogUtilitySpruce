@@ -682,7 +682,7 @@ MonoBehaviour:
   image: {fileID: 1775397322}
   textBox: {fileID: 649070337}
   charactersPerMessage: 100
-  _currentDialog: {fileID: 11400000, guid: b4803dc3430db174bae1a7016a11b25e, type: 2}
+  _currentDialog: {fileID: 11400000, guid: babda4e7d14d3004f948687a10955cd5, type: 2}
 --- !u!4 &1100303221
 Transform:
   m_ObjectHideFlags: 0

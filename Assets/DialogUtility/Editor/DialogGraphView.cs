@@ -250,12 +250,14 @@ namespace DialogUtilitySpruce.Editor
                         output = node.outputContainer.Q<Port>(link.basePortID.Value),
                         input = targetNode.inputContainer.Q<Port>()
                     };
-                    tmpEdge.input.Connect(tmpEdge);
-                    tmpEdge.output.Connect(tmpEdge);
-                    if(!edges.ToList().Exists(x=>x.input == tmpEdge.input && x.output == tmpEdge.output))
-                        Add(tmpEdge);
-                    tmpEdge.UpdatePresenterPosition();
-                    
+                    if (tmpEdge.input != null && tmpEdge.output != null)
+                    {
+                        tmpEdge.input.Connect(tmpEdge);
+                        tmpEdge.output.Connect(tmpEdge);
+                        if (!edges.ToList().Exists(x => x.input == tmpEdge.input && x.output == tmpEdge.output))
+                            Add(tmpEdge);
+                        tmpEdge.UpdatePresenterPosition();
+                    }
                 }
             }
         }

@@ -14,17 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalCharacterDataList:
   - id:
-      Value: d0547b0c-dd5f-4cad-9f35-448ee3329dd7
-    usages: []
-    icon: {fileID: 21300000, guid: e92527f6d0fe45342ab542b47346d45f, type: 3}
+      Value: 4e06e78f-1197-4a77-bb34-0dae858b44d8
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
     resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
   - id:
-      Value: e2366bff-f32f-470e-983c-e667666565e3
-    usages: []
-    icon: {fileID: 21300000, guid: a04ecc9d5e12d5d449077414eb86635e, type: 3}
+      Value: cde50bef-fb73-45a0-af48-8563860a6564
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: 3a0c527d7f890d64a9b56b086e6e766a, type: 3}
     resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
   - id:
-      Value: d88820cc-9b99-403a-afee-e0246a3658da
-    usages: []
-    icon: {fileID: 21300000, guid: 56e456ab0f7f79a4dbabcc9079c49a94, type: 3}
+      Value: f1f9adff-4df2-4830-99d2-dafe0b1fdba7
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: 6fac4e39926fd9c4ca2ba4416160a857, type: 3}
+    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+  - id:
+      Value: 6814a8f5-949e-47e6-8848-a647fe727c95
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: fd098fb4cf57bad419701c802e442b7e, type: 3}
     resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
