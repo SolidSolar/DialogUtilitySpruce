@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022613a00ecc42df8fec3a74d6226a2d, type: 3}
   m_Name: Example dialog
   m_EditorClassIdentifier: 
-  keys:
-  - Value: 
-  - Value: 
-  values:
-  - 
-  - 
   texts:
     keys:
     - Value: dc58cb96-5d94-4355-a198-69f66e944415
     - Value: 4f03bb3a-9ea0-4caf-a30e-211bca2b9e5b
+    - Value: 12122df4-c049-416d-b6a1-33c8713ace4b
+    - Value: 1a302ba2-22e8-4932-9a1a-a515fad6b415
     values:
-    - jkhjk
-    - cmnbvnbm
+    - Hi, characters!
+    - Hi, Character1, I am character 2
+    - Hi, Character1, I am characte 3
+    - Hi, Character1, I am character 4

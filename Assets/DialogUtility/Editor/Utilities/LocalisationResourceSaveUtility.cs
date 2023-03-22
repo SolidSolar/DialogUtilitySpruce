@@ -21,6 +21,8 @@ namespace DialogUtilitySpruce.Editor
                 data = ScriptableObject.CreateInstance<LocalisationResource>();
             }
 
+            EditorUtility.SetDirty(data);
+            
             if(!AssetDatabase.Contains(data))
             {
                 var splitPath = path.Split('/');
@@ -45,6 +47,7 @@ namespace DialogUtilitySpruce.Editor
             LocalisationResource.Copy(resource, data);
             
             AssetDatabase.SaveAssets();
+            EditorUtility.ClearDirty(data);
         }
 
         

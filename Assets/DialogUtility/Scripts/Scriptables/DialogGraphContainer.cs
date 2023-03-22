@@ -13,7 +13,7 @@ namespace DialogUtilitySpruce
         public List<NodeLinkData> nodeLinks = new();
         [SerializeReference]
         public List<DialogNodeDataContainer> dialogNodeDataList = new();
-        [SerializeField] 
+        [SerializeReference]
         public LocalisationResource localisationResource;
         public List<CharacterData> characterList = new();
 

@@ -42,7 +42,6 @@ namespace DialogUtilitySpruce.Editor
             if (!string.IsNullOrWhiteSpace(text) && !characterList.GetGlobalCharacterNames().Contains(text))
             {
                 _model.Name = text;
-                characterList.OnLocalListChanged?.Invoke();
                 characterList.OnCharacterChanged?.Invoke(_model);
                 return true;
             }

@@ -29,6 +29,16 @@ namespace DialogUtilitySpruce.Editor
             {
                 _updateLocalCharacterList(CharacterList.Instance.GetLocalCharacterNames());
             };
+            
+            CharacterList.Instance.OnCharacterChanged += (c) =>
+            {
+                if (model.Character == c)
+                {
+                    _updateLocalCharacterName(c);
+                    _updateLocalCharacterList(CharacterList.Instance.GetLocalCharacterNames());
+                }
+            };
+            
             _updateLocalCharacterList(CharacterList.Instance.GetLocalCharacterNames());
             dropdown.RegisterCallback<ChangeEvent<string>>(evt =>
             {
@@ -47,6 +57,7 @@ namespace DialogUtilitySpruce.Editor
                     dropdown.SetValueWithoutNotify("<none>");
                 }
             }; 
+            
             
             label.text = string.Format(label.text, model.Id.Value.Substring(0, 5));
             mainContainer.Add(nodeUxml);
@@ -133,6 +144,19 @@ namespace DialogUtilitySpruce.Editor
                 _dropdown.SetValueWithoutNotify("<none>");
             }
         }
+        
+        private void _updateLocalCharacterName(CharacterModel character)
+        {
+            if (character != null)
+            {
+                _dropdown.SetValueWithoutNotify(character.Name);
+            }
+            else
+            {
+                _dropdown.SetValueWithoutNotify("<none>");
+            }
+        }
+
         
         private Port _generatePort(Direction portDirection, Port.Capacity capacity = Port.Capacity.Multi)
         {

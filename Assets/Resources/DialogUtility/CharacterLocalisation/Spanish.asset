@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
     keys:
-    - Value: d0547b0c-dd5f-4cad-9f35-448ee3329dd7
-    - Value: e2366bff-f32f-470e-983c-e667666565e3
-    - Value: d88820cc-9b99-403a-afee-e0246a3658da
+    - Value: 4e06e78f-1197-4a77-bb34-0dae858b44d8
+    - Value: cde50bef-fb73-45a0-af48-8563860a6564
+    - Value: f1f9adff-4df2-4830-99d2-dafe0b1fdba7
+    - Value: 6814a8f5-949e-47e6-8848-a647fe727c95
     values:
+    - Character1
     - Character2
     - Character3
     - Character4
