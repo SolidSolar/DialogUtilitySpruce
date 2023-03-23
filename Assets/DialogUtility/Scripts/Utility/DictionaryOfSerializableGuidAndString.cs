@@ -1,6 +1,9 @@
 ﻿using System;
 
-[Serializable]
-public class DictionaryOfSerializableGuidAndString : SerializableDictionary<SerializableGuid, string>
+namespace DialogUtilitySpruce
 {
+    [Serializable]
+    public class DictionaryOfSerializableGuidAndString : SerializableDictionary<SerializableGuid, string>
+    {
+    }
 }

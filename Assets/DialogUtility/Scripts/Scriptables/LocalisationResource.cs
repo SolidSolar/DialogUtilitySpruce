@@ -1,26 +1,30 @@
 ﻿using System;
 using UnityEngine;
 
-[Serializable]
-public class LocalisationResource : ScriptableObject
+namespace DialogUtilitySpruce
 {
-    [SerializeField]
-    public DictionaryOfSerializableGuidAndString texts = new();
-    public string GetText(SerializableGuid guid)
+    [Serializable]
+    public class LocalisationResource : ScriptableObject
     {
-        if (!texts.ContainsKey(guid))
-        {
-            return "";
-        }
-        return texts[guid];
-    }
+        [SerializeField] public DictionaryOfSerializableGuidAndString texts = new();
 
-    public static void Copy(LocalisationResource origin, LocalisationResource destination)
-    {
-        destination.texts = new DictionaryOfSerializableGuidAndString();
-        foreach (var kvp in origin.texts)
+        public string GetText(SerializableGuid guid)
         {
-            destination.texts.Add(kvp.Key, kvp.Value);
+            if (!texts.ContainsKey(guid))
+            {
+                return "";
+            }
+
+            return texts[guid];
+        }
+
+        public static void Copy(LocalisationResource origin, LocalisationResource destination)
+        {
+            destination.texts = new DictionaryOfSerializableGuidAndString();
+            foreach (var kvp in origin.texts)
+            {
+                destination.texts.Add(kvp.Key, kvp.Value);
+            }
         }
     }
 }

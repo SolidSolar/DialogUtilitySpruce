@@ -18,7 +18,15 @@ MonoBehaviour:
     - Value: cde50bef-fb73-45a0-af48-8563860a6564
     - Value: f1f9adff-4df2-4830-99d2-dafe0b1fdba7
     - Value: 6814a8f5-949e-47e6-8848-a647fe727c95
+    - Value: 329ae49c-359e-40ee-8244-53fe4e9f5c8f
+    - Value: e59681ff-cdab-4f67-99ae-307b8fc44adf
+    - Value: 21b41712-39f5-4f24-b005-4659f0a04ad3
+    - Value: 31ab7122-eb09-4aa5-a0d5-35d9a6127880
     values:
+    - Character1
+    - Character2
+    - Character3
+    - Character4
     - Character1
     - Character2
     - Character3

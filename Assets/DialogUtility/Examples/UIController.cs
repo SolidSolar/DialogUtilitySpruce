@@ -1,14 +1,18 @@
 using System;
 using UnityEngine;
 
-public class UIController : MonoBehaviour
+namespace DialogUtilitySpruce.Examples
 {
-    public static Action OnNext;
-    private void Update()
+    public class UIController : MonoBehaviour
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        public static Action OnNext;
+
+        private void Update()
         {
-            OnNext?.Invoke();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                OnNext?.Invoke();
+            }
         }
     }
 }

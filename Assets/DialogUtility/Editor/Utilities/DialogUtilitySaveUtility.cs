@@ -52,9 +52,10 @@ namespace DialogUtilitySpruce.Editor
                 AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(_graphContainer),
                     _virtualContainer.name);
             }
-            
+            EditorUtility.SetDirty(_graphContainer);
             DialogGraphContainer.Copy(_virtualContainer,_graphContainer);
             
+            //clear deleted nodes
             _graphContainer.dialogNodeDataList.RemoveAll(x =>
             {
                 return !Nodes.Exists(y => y.Model.Id == x.Id);
@@ -107,6 +108,7 @@ namespace DialogUtilitySpruce.Editor
             _usagesHandler.CurrentContainer = _graphContainer;
             _usagesHandler.UpdateDictionaryOfIdsAndContainers();
             AssetDatabase.SaveAssets();
+            EditorUtility.ClearDirty(_graphContainer);
         }
         
         public DialogGraphContainer Load(string filename)

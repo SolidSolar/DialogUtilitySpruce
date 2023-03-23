@@ -1,5 +1,8 @@
 using System;
 
+namespace DialogUtilitySpruce
+{
+
 [Serializable]
 public struct SerializableGuid : IComparable, IComparable<SerializableGuid>, IEquatable<SerializableGuid>
 {
@@ -70,4 +73,5 @@ public struct SerializableGuid : IComparable, IComparable<SerializableGuid>, IEq
         return !string.IsNullOrWhiteSpace(guid.Value);
     }
 
+}
 }

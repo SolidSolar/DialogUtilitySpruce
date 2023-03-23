@@ -16,7 +16,7 @@ MonoBehaviour:
     id:
       Value: 1a302ba2-22e8-4932-9a1a-a515fad6b415
     characterId:
-      Value: 6814a8f5-949e-47e6-8848-a647fe727c95
+      Value: 31ab7122-eb09-4aa5-a0d5-35d9a6127880
     text: 
     sprite: {fileID: 0}
     position: {x: 758, y: 784.60175}
@@ -40,7 +40,7 @@ MonoBehaviour:
     id:
       Value: 4f03bb3a-9ea0-4caf-a30e-211bca2b9e5b
     characterId:
-      Value: cde50bef-fb73-45a0-af48-8563860a6564
+      Value: e59681ff-cdab-4f67-99ae-307b8fc44adf
     text: 
     sprite: {fileID: 0}
     position: {x: 758.35504, y: -185.86998}
@@ -72,9 +72,9 @@ MonoBehaviour:
   startNodeId:
     Value: dc58cb96-5d94-4355-a198-69f66e944415
   nodeLinks:
-  - rid: 7226681421970276364
-  - rid: 7226681421970276365
-  - rid: 7226681421970276366
+  - rid: 7226681441758478342
+  - rid: 7226681441758478343
+  - rid: 7226681441758478344
   dialogNodeDataList:
   - {fileID: 2550680873880488285}
   - {fileID: -1295589649781287673}
@@ -83,25 +83,25 @@ MonoBehaviour:
   localisationResource: {fileID: 0}
   characterList:
   - id:
-      Value: 4e06e78f-1197-4a77-bb34-0dae858b44d8
-    usages:
-    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
-    icon: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
-  - id:
-      Value: cde50bef-fb73-45a0-af48-8563860a6564
-    usages:
-    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
-    icon: {fileID: 21300000, guid: 3a0c527d7f890d64a9b56b086e6e766a, type: 3}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
-  - id:
-      Value: f1f9adff-4df2-4830-99d2-dafe0b1fdba7
+      Value: 21b41712-39f5-4f24-b005-4659f0a04ad3
     usages:
     - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
     icon: {fileID: 21300000, guid: 6fac4e39926fd9c4ca2ba4416160a857, type: 3}
     resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
   - id:
-      Value: 6814a8f5-949e-47e6-8848-a647fe727c95
+      Value: 329ae49c-359e-40ee-8244-53fe4e9f5c8f
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
+    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+  - id:
+      Value: e59681ff-cdab-4f67-99ae-307b8fc44adf
+    usages:
+    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    icon: {fileID: 21300000, guid: 3a0c527d7f890d64a9b56b086e6e766a, type: 3}
+    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+  - id:
+      Value: 31ab7122-eb09-4aa5-a0d5-35d9a6127880
     usages:
     - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
     icon: {fileID: 21300000, guid: fd098fb4cf57bad419701c802e442b7e, type: 3}
@@ -109,7 +109,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7226681421970276364
+    - rid: 7226681441758478342
       type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
       data:
         baseNodeID:
@@ -118,7 +118,7 @@ MonoBehaviour:
           Value: 25b54f73-07db-49d1-a4d9-1d27888d0ffa
         targetNodeID:
           Value: 4f03bb3a-9ea0-4caf-a30e-211bca2b9e5b
-    - rid: 7226681421970276365
+    - rid: 7226681441758478343
       type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
       data:
         baseNodeID:
@@ -127,7 +127,7 @@ MonoBehaviour:
           Value: 20fa7b6e-d7e1-4435-b09a-b596f0439758
         targetNodeID:
           Value: 12122df4-c049-416d-b6a1-33c8713ace4b
-    - rid: 7226681421970276366
+    - rid: 7226681441758478344
       type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
       data:
         baseNodeID:
@@ -152,10 +152,10 @@ MonoBehaviour:
     id:
       Value: dc58cb96-5d94-4355-a198-69f66e944415
     characterId:
-      Value: 4e06e78f-1197-4a77-bb34-0dae858b44d8
+      Value: 329ae49c-359e-40ee-8244-53fe4e9f5c8f
     text: 
     sprite: {fileID: 0}
-    position: {x: -14.35501, y: 13.580003}
+    position: {x: -12.47914, y: 13.000065}
     ports:
     - rid: 7226681393531584513
     - rid: 7226681393531584562
@@ -197,7 +197,7 @@ MonoBehaviour:
     id:
       Value: 12122df4-c049-416d-b6a1-33c8713ace4b
     characterId:
-      Value: f1f9adff-4df2-4830-99d2-dafe0b1fdba7
+      Value: 21b41712-39f5-4f24-b005-4659f0a04ad3
     text: 
     sprite: {fileID: 0}
     position: {x: 811.5389, y: 376.03632}
