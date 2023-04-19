@@ -65,16 +65,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96af60eaeaa6420497e02b399bb92455, type: 3}
-  m_Name: Example dialog
+  m_Name: Example
   m_EditorClassIdentifier: 
   id:
-    Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    Value: ea1f6fe2-7472-4322-94a1-e545f26ef4d2
   startNodeId:
     Value: dc58cb96-5d94-4355-a198-69f66e944415
   nodeLinks:
-  - rid: 7226681441758478342
-  - rid: 7226681441758478343
-  - rid: 7226681441758478344
+  - rid: 3161117043908411574
+  - rid: 3161117043908411575
+  - rid: 3161117043908411576
   dialogNodeDataList:
   - {fileID: 2550680873880488285}
   - {fileID: -1295589649781287673}
@@ -83,33 +83,33 @@ MonoBehaviour:
   localisationResource: {fileID: 0}
   characterList:
   - id:
-      Value: 21b41712-39f5-4f24-b005-4659f0a04ad3
-    usages:
-    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
-    icon: {fileID: 21300000, guid: 6fac4e39926fd9c4ca2ba4416160a857, type: 3}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
-  - id:
       Value: 329ae49c-359e-40ee-8244-53fe4e9f5c8f
     usages:
-    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    - Value: ea1f6fe2-7472-4322-94a1-e545f26ef4d2
     icon: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+    resource: {fileID: 11400000, guid: b7a05ac18f2863a448008e435bf9cc10, type: 2}
   - id:
       Value: e59681ff-cdab-4f67-99ae-307b8fc44adf
     usages:
-    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    - Value: ea1f6fe2-7472-4322-94a1-e545f26ef4d2
     icon: {fileID: 21300000, guid: 3a0c527d7f890d64a9b56b086e6e766a, type: 3}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+    resource: {fileID: 11400000, guid: b7a05ac18f2863a448008e435bf9cc10, type: 2}
+  - id:
+      Value: 21b41712-39f5-4f24-b005-4659f0a04ad3
+    usages:
+    - Value: ea1f6fe2-7472-4322-94a1-e545f26ef4d2
+    icon: {fileID: 21300000, guid: 6fac4e39926fd9c4ca2ba4416160a857, type: 3}
+    resource: {fileID: 11400000, guid: b7a05ac18f2863a448008e435bf9cc10, type: 2}
   - id:
       Value: 31ab7122-eb09-4aa5-a0d5-35d9a6127880
     usages:
-    - Value: 3ed4b412-e9a6-4bda-a6b0-bf15e4163b6a
+    - Value: ea1f6fe2-7472-4322-94a1-e545f26ef4d2
     icon: {fileID: 21300000, guid: fd098fb4cf57bad419701c802e442b7e, type: 3}
-    resource: {fileID: 11400000, guid: 891ecdacf12a4cf499cbad969d8b2779, type: 2}
+    resource: {fileID: 11400000, guid: b7a05ac18f2863a448008e435bf9cc10, type: 2}
   references:
     version: 2
     RefIds:
-    - rid: 7226681441758478342
+    - rid: 3161117043908411574
       type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
       data:
         baseNodeID:
@@ -118,7 +118,7 @@ MonoBehaviour:
           Value: 25b54f73-07db-49d1-a4d9-1d27888d0ffa
         targetNodeID:
           Value: 4f03bb3a-9ea0-4caf-a30e-211bca2b9e5b
-    - rid: 7226681441758478343
+    - rid: 3161117043908411575
       type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
       data:
         baseNodeID:
@@ -127,7 +127,7 @@ MonoBehaviour:
           Value: 20fa7b6e-d7e1-4435-b09a-b596f0439758
         targetNodeID:
           Value: 12122df4-c049-416d-b6a1-33c8713ace4b
-    - rid: 7226681441758478344
+    - rid: 3161117043908411576
       type: {class: NodeLinkData, ns: DialogUtilitySpruce, asm: Assembly-CSharp}
       data:
         baseNodeID:

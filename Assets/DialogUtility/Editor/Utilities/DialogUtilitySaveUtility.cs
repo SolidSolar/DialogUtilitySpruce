@@ -142,11 +142,7 @@ namespace DialogUtilitySpruce.Editor
                 charList = CharacterList.CreateCharacterList();
             }
             CharacterList.Instance = charList;
-            //copy dialog file situation
-            if (DialogUtilityUsagesHandler.Instance.IsCopy(_graphContainer, out DialogGraphContainer original))
-            {
-                _processCopy(_graphContainer, original);
-            }
+            DialogUtilityUsagesHandler.Instance.ProcessIfCopy(_graphContainer);
 
             if (!_virtualContainer)
             {
@@ -159,17 +155,6 @@ namespace DialogUtilitySpruce.Editor
             CharacterList.Instance.UpdateLocalList(_virtualContainer.characterList);
             
             return _virtualContainer;
-        }
-
-        private void _processCopy(DialogGraphContainer copy, DialogGraphContainer original)
-        {
-            copy.id = Guid.NewGuid();
-            foreach (var data in CharacterList.Instance.globalCharacterDataList)
-            {
-                data.usages.Add(copy.id); 
-            }
-            
-            DialogLanguageHandler.Instance.CreateLocalisationResourceCopy(copy, original);
         }
     }
 }

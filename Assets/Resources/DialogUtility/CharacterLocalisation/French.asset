@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 022613a00ecc42df8fec3a74d6226a2d, type: 3}
-  m_Name: Example dialog
+  m_Name: French
   m_EditorClassIdentifier: 
   texts:
     keys:
-    - Value: dc58cb96-5d94-4355-a198-69f66e944415
-    - Value: 4f03bb3a-9ea0-4caf-a30e-211bca2b9e5b
-    - Value: 12122df4-c049-416d-b6a1-33c8713ace4b
-    - Value: 1a302ba2-22e8-4932-9a1a-a515fad6b415
+    - Value: 329ae49c-359e-40ee-8244-53fe4e9f5c8f
+    - Value: e59681ff-cdab-4f67-99ae-307b8fc44adf
+    - Value: 21b41712-39f5-4f24-b005-4659f0a04ad3
+    - Value: 31ab7122-eb09-4aa5-a0d5-35d9a6127880
     values:
-    - bvncvbncvbngf
-    - dfgjnbvcn
-    - xcvsd
-    - sfddsf
+    - Personnage1
+    - Personnage2
+    - Personnage3
+    - Personnage4

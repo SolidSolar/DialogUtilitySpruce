@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,7 +12,7 @@ namespace DialogUtilitySpruce.Editor
             get => _graphContainer.name;
             set => _graphContainer.name = value;
         }
-        
+
         private DialogUtilitySaveUtility _saveUtility;
         private string _fileName;
         private DialogGraphView _graphView;
@@ -19,7 +20,7 @@ namespace DialogUtilitySpruce.Editor
         private VisualElement _characterListView;
         private VisualElement _window;
         private DropdownField _languageDropdown;
-
+        
         private const string ManageLanguages = "Manage languages...";
         [MenuItem("Window/DialogUtilitySpruce")]
         public static DialogUtilityWindow OpenDialogUtilityWindow()

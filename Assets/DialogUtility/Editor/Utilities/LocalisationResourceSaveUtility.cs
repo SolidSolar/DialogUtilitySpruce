@@ -159,11 +159,15 @@ namespace DialogUtilitySpruce.Editor
         {
             var p = string.Format(LocalisationPath, language, copyName);
             var p2 = string.Format(LocalisationPath, language, originalName);
-            AssetDatabase.CopyAsset(p2, p);
-            AssetDatabase.SaveAssets();
-            var res = AssetDatabase.LoadAssetAtPath<LocalisationResource>(p);
-            if (res) return res;
-            Debug.LogError("Localisation resource copy failed!");
+            //user might try copy asset which doesnt have localisation yet
+            if (AssetDatabase.LoadAssetAtPath<LocalisationResource>(p2))
+            {
+                AssetDatabase.CopyAsset(p2, p);
+                AssetDatabase.SaveAssets();
+                var res = AssetDatabase.LoadAssetAtPath<LocalisationResource>(p);
+                if (res) return res;
+                Debug.LogError("Localisation resource copy failed!");
+            }
             return null;
         }
         

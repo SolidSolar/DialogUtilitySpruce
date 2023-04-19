@@ -15,4 +15,5 @@ MonoBehaviour:
   Languages:
   - English
   - Spanish
-  CurrentLanguageIndex: 0
+  - French
+  CurrentLanguageIndex: 2

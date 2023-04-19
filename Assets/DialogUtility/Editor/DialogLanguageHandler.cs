@@ -95,7 +95,12 @@ namespace DialogUtilitySpruce.Editor
                 {
                     var old = _resource[lang];
                     _resource[lang] = resource[lang];
-                    LocalisationResourceSaveUtility.SaveLocalisationResource(_resource[Language], Language, copy.name);
+                    if (_resource[Language])
+                    {
+                        LocalisationResourceSaveUtility.SaveLocalisationResource(_resource[Language], Language,
+                            copy.name);
+                    }
+
                     _resource[lang] = old;
                 }
             }

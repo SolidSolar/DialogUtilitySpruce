@@ -4,18 +4,29 @@
     <list default="true" id="aeac67ad-16cd-4cb9-966f-2a3f8954ca16" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DialogUtilitySpruce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DialogUtilitySpruce/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/CharacterList.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/CharacterList.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/DialogUtilityUsagesHandler.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/DialogUtilityUsagesHandler.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Editor/DialogLanguageHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Editor/DialogLanguageHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Editor/DialogUtilityUsagesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Editor/DialogUtilityUsagesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Editor/DialogUtilityWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Editor/DialogUtilityWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Editor/Utilities/DialogUtilityFilesProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Editor/Utilities/DialogUtilityFilesProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Editor/Utilities/DialogUtilitySaveUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Editor/Utilities/DialogUtilitySaveUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Examples/DialogBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Examples/DialogBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Examples/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Examples/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Scriptables/DialogGraphContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Scriptables/DialogGraphContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Scriptables/LocalisationResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Scriptables/LocalisationResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Utility/DictionaryOfSerializableGuidAndString.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Utility/DictionaryOfSerializableGuidAndString.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Utility/SerializableDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Utility/SerializableDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Utility/SerializableGuid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Scripts/Utility/SerializableGuid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/CharacterLocalisation/English.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/CharacterLocalisation/English.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Editor/Utilities/LocalisationResourceSaveUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Editor/Utilities/LocalisationResourceSaveUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DialogUtility/Examples/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogUtility/Examples/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/CharacterLocalisation.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/CharacterLocalisation.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/CharacterLocalisation/Spanish.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/CharacterLocalisation/Spanish.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Containers/Example dialog.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Containers/Example dialog.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DialogUtilitySpruce.unitypackage" beforeDir="false" afterPath="$PROJECT_DIR$/DialogUtilitySpruce.unitypackage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/ContainerLocalisation.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/ContainerLocalisation.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/ContainerLocalisation/English.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/ContainerLocalisation/English.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/ContainerLocalisation/English/Example dialog.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/ContainerLocalisation/English/Example dialog.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/ContainerLocalisation/Spanish/Example dialog.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/ContainerLocalisation/Spanish/Example dialog.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Containers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Containers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Containers/Example dialog.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Containers/Example dialog.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Settings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Settings.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Settings/Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Settings/Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Settings/Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DialogUtility/Settings/Settings.asset.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +102,10 @@
       <workItem from="1679383298332" duration="11803000" />
       <workItem from="1679491119556" duration="1910000" />
       <workItem from="1679566668591" duration="1195000" />
+      <workItem from="1681234916937" duration="3543000" />
+      <workItem from="1681300228164" duration="981000" />
+      <workItem from="1681301384469" duration="452000" />
+      <workItem from="1681302220889" duration="1153000" />
     </task>
     <servers />
   </component>

@@ -27,7 +27,6 @@ namespace DialogUtilitySpruce.Editor
         }
         
         public DialogGraphContainer CurrentContainer { get; set; }
-        [HideInInspector]
         [SerializeField]
         private DictionaryOfSerializableGuidAndDialogGraphContainer dictionaryOfIdsAndContainers;
 
@@ -63,17 +62,41 @@ namespace DialogUtilitySpruce.Editor
             return usages.Where(x=>dictionaryOfIdsAndContainers.ContainsKey(x)).ToList();
         }
 
-        public bool IsCopy(DialogGraphContainer container, out DialogGraphContainer original)
+        public bool ProcessIfCopy(DialogGraphContainer container)
         {
-            original = null;
+            DialogGraphContainer original = null;
             var result = dictionaryOfIdsAndContainers.ContainsKey(container.id) &&
                    container != dictionaryOfIdsAndContainers[container.id];
             if (result)
             {
                 original = dictionaryOfIdsAndContainers[container.id];
+                if (!original)
+                {
+                    dictionaryOfIdsAndContainers.Remove(container.id);
+                }
+                _processCopy(container, original);
             }
 
             return result;
+        }
+        
+        private void _processCopy(DialogGraphContainer copy, DialogGraphContainer original)
+        {
+            EditorUtility.SetDirty(copy);
+            copy.id = Guid.NewGuid();
+            dictionaryOfIdsAndContainers.Add(copy.id, copy);
+            foreach (var data in CharacterList.Instance.globalCharacterDataList)
+            {
+                data.usages.Add(copy.id); 
+            }
+
+            if (original)
+            {
+                DialogLanguageHandler.Instance.CreateLocalisationResourceCopy(copy, original);
+            }
+
+            EditorUtility.ClearDirty(copy);
+            AssetDatabase.SaveAssets();
         }
         
         public void UpdateDictionaryOfIdsAndContainers()

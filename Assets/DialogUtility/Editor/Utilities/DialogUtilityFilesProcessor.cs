@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using UnityEditor;
+using UnityEngine;
 
 namespace DialogUtilitySpruce.Editor
 {
@@ -20,9 +22,9 @@ namespace DialogUtilitySpruce.Editor
             return false; // let unity open the file
         }
 
+
         private static AssetDeleteResult OnWillDeleteAsset(string assetPath, RemoveAssetOptions options)
         {
-            
             if (assetPath.Contains(ContainersPath)&&assetPath.Contains(".asset"))
             {
                 var fileName = Path.GetFileNameWithoutExtension(assetPath);
@@ -31,7 +33,19 @@ namespace DialogUtilitySpruce.Editor
 
             return AssetDeleteResult.DidNotDelete;
         }
-        
+
+        private static void OnWillCreateAsset(string assetName)
+        {
+            if (!assetName.Contains(".meta") && assetName.Contains(ContainersPath))
+            {
+                var container = AssetDatabase.LoadAssetAtPath<DialogGraphContainer>(assetName);
+                if (container)
+                {
+                    DialogUtilityUsagesHandler.Instance.ProcessIfCopy(container);
+                }
+            }
+        }
+
         private static AssetMoveResult OnWillMoveAsset(string sourcePath, string destinationPath)
         {
             if (sourcePath.Contains(ContainersPath) && sourcePath.Contains(".asset"))

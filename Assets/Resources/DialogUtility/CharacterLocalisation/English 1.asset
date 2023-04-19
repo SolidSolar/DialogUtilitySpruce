@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 022613a00ecc42df8fec3a74d6226a2d, type: 3}
-  m_Name: Spanish
+  m_Name: English 1
   m_EditorClassIdentifier: 
   texts:
     keys:
     - Value: 329ae49c-359e-40ee-8244-53fe4e9f5c8f
-    - Value: e59681ff-cdab-4f67-99ae-307b8fc44adf
     - Value: 21b41712-39f5-4f24-b005-4659f0a04ad3
     - Value: 31ab7122-eb09-4aa5-a0d5-35d9a6127880
+    - Value: d83a0ef2-2919-45e0-8c2c-6e0ec70f8a4d
+    - Value: b04f5da7-b444-4397-9f9c-2953ba6fdcd7
     values:
-    - Personaje1
-    - Character2
-    - Character3
-    - Character4
+    - "\u0412\u0430\u0441\u0438\u043B\u0438\u0439 \u041F\u0435\u0442\u0440\u043E\u0432\u0438\u0447"
+    - "\u0412\u0430\u0441\u0438\u043B\u0438\u0439 \u0413\u0435\u0435\u0432\u0438\u0447"
+    - "\u0439\u0439\u0439"
+    - "\u044B"
+    - Unnamed_1d5498

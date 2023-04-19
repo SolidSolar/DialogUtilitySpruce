@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 022613a00ecc42df8fec3a74d6226a2d, type: 3}
-  m_Name: Spanish
+  m_Name: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439 1"
   m_EditorClassIdentifier: 
   texts:
     keys:
@@ -18,8 +18,12 @@ MonoBehaviour:
     - Value: e59681ff-cdab-4f67-99ae-307b8fc44adf
     - Value: 21b41712-39f5-4f24-b005-4659f0a04ad3
     - Value: 31ab7122-eb09-4aa5-a0d5-35d9a6127880
+    - Value: 01c48d9e-6c5f-4b06-a848-faa1fdd49122
+    - Value: 8e441230-37c6-4f3c-88db-223b9669a067
     values:
-    - Personaje1
+    - Character1
     - Character2
     - Character3
     - Character4
+    - Unnamed_1c16f0
+    - Unnamed_b669ec
